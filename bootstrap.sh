@@ -5,7 +5,7 @@ useradd dyno --create-home
 mkdir /home/dyno/.ssh
 chown dyno:dyno /home/dyno/.ssh
 chmod 0700 /home/dyno/.ssh
-echo -n 'command="echo '\n------> This Dynosaur is still booting. Please try again.\n'",no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty ' > /home/dyno/.ssh/authorized_keys
+echo -n 'command="echo '\n------> This Dynosaur is still booting. Please try again.\n' 1>&2",no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty ' > /home/dyno/.ssh/authorized_keys
 cat /home/ubuntu/.ssh/authorized_keys >> /home/dyno/.ssh/authorized_keys
 
 mkdir /home/dyno/slugs
