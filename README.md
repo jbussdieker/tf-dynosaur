@@ -1,5 +1,16 @@
 # tf-dynosaur
 
+Dynosaur is an instance listening on port 22 for git pushes. Once a push is received it tries each of the default Heroku build packs until a match is found. Next the project is compiled and stared with logs streaming to the git session. If the user ends the session the app will continue to run in the background.
+
+## Usage
+
+````bash
+$ terraform apply
+$ PUBLIC_IP=$(terraform output instance_public_ips)
+$ cd SOME_HEROKU_COMPATIBLE_REPO
+$ git push dyno@${PUBLIC_IP}:rails-project
+````
+
 ## Inputs
 
 | Name | Description | Default | Required |
