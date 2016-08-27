@@ -23,11 +23,21 @@ resource "aws_subnet" "main" {
   map_public_ip_on_launch = true
 }
 
-resource "aws_security_group_rule" "allow_all" {
+resource "aws_security_group_rule" "allow_ssh" {
   count             = "${signum(var.instance_count)}"
   type              = "ingress"
   from_port         = 22
   to_port           = 22
+  protocol          = "tcp"
+  cidr_blocks       = ["0.0.0.0/0"]
+  security_group_id = "${aws_vpc.main.default_security_group_id}"
+}
+
+resource "aws_security_group_rule" "allow_web" {
+  count             = "${signum(var.instance_count)}"
+  type              = "ingress"
+  from_port         = 5200
+  to_port           = 5200
   protocol          = "tcp"
   cidr_blocks       = ["0.0.0.0/0"]
   security_group_id = "${aws_vpc.main.default_security_group_id}"
