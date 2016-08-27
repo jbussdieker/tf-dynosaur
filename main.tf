@@ -5,10 +5,12 @@ resource "aws_vpc" "main" {
 }
 
 resource "aws_internet_gateway" "main" {
+  count  = "${signum(var.instance_count)}"
   vpc_id = "${aws_vpc.main.id}"
 }
 
 resource "aws_route" "internet" {
+  count                  = "${signum(var.instance_count)}"
   route_table_id         = "${aws_vpc.main.main_route_table_id}"
   destination_cidr_block = "0.0.0.0/0"
   gateway_id             = "${aws_internet_gateway.main.id}"
@@ -22,6 +24,7 @@ resource "aws_subnet" "main" {
 }
 
 resource "aws_security_group_rule" "allow_all" {
+  count             = "${signum(var.instance_count)}"
   type              = "ingress"
   from_port         = 22
   to_port           = 22
