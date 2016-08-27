@@ -1,6 +1,6 @@
 # tf-dynosaur
 
-Dynosaur is an instance listening on port 22 for git pushes. Once a push is received it tries each of the default Heroku build packs until a match is found. Next the project is compiled and stared with logs streaming to the git session. If the user ends the session the app will continue to run in the background.
+Dynosaur is an instance listening on port 22 for git pushes. Once a push is received it tries each of the default [Heroku build packs](https://devcenter.heroku.com/articles/buildpacks) until a match is found. Next the project is compiled and stared with logs streaming to the git session. If the user ends the session the app will continue to run in the background.
 
 ## Usage
 
@@ -21,6 +21,20 @@ remote: 12:32:05 web.1     | => Run `rails server -h` for more startup options
 remote: 12:32:05 web.1     | => Notice: server is listening on all interfaces (0.0.0.0). Consider using 127.0.0.1 (--binding option)
 remote: 12:32:05 web.1     | => Ctrl-C to shutdown server
 ````
+
+## Supported Build Packs
+
+ * https://github.com/heroku/heroku-buildpack-ruby
+ * https://github.com/heroku/heroku-buildpack-nodejs
+ * https://github.com/heroku/heroku-buildpack-closure
+ * https://github.com/heroku/heroku-buildpack-python
+ * https://github.com/heroku/heroku-buildpack-java
+ * https://github.com/heroku/heroku-buildpack-gradle
+ * https://github.com/heroku/heroku-buildpack-grails
+ * https://github.com/heroku/heroku-buildpack-scala
+ * https://github.com/heroku/heroku-buildpack-play
+ * https://github.com/heroku/heroku-buildpack-php
+ * https://github.com/heroku/heroku-buildpack-go
 
 ## Inputs
 
