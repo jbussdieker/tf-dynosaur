@@ -56,7 +56,7 @@ Commands:
 | release | Ubuntu Release (precise, trusty, xenial, etc.) | `"trusty"` | no |
 | virtualization_type | Virtualization type (hvm or paravirtual) | `"hvm"` | no |
 | root_device_type | Root volume type (instance-store or ebs) | `"instance-store"` | no |
-| instance_count | Number of instances to launch | `0` | no |
+| instance_count | Number of instances to launch | `1` | no |
 | key_name | Name of AWS keypair | - | yes |
 
 ## Outputs
