@@ -9,6 +9,17 @@ $ terraform apply
 $ PUBLIC_IP=$(terraform output instance_public_ips)
 $ cd SOME_HEROKU_COMPATIBLE_REPO
 $ git push dyno@${PUBLIC_IP}:rails-project
+Writing objects: 100% (64/64), 17.35 KiB | 0 bytes/s, done.
+Total 64 (delta 2), reused 0 (delta 0)
+remote: Building rails-project
+remote: -----> Ruby app detected
+remote: -----> Compiling Ruby/Rails
+...
+remote: 12:32:05 web.1     | => Booting WEBrick
+remote: 12:32:05 web.1     | => Rails 4.1.4 application starting in production on http://0.0.0.0:5200
+remote: 12:32:05 web.1     | => Run `rails server -h` for more startup options
+remote: 12:32:05 web.1     | => Notice: server is listening on all interfaces (0.0.0.0). Consider using 127.0.0.1 (--binding option)
+remote: 12:32:05 web.1     | => Ctrl-C to shutdown server
 ````
 
 ## Inputs
