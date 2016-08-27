@@ -30,7 +30,7 @@ variable "root_device_type" {
 
 variable "instance_count" {
   description = "Number of instances to launch"
-  default     = 0
+  default     = "1"
 }
 
 variable "key_name" {
