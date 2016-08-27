@@ -22,6 +22,16 @@ remote: 12:32:05 web.1     | => Notice: server is listening on all interfaces (0
 remote: 12:32:05 web.1     | => Ctrl-C to shutdown server
 ````
 
+````
+$ ssh dyno@52.53.210.153
+Welcome to Dynosaur!
+
+Commands:
+  check
+  console
+  rake ARGS
+````
+
 ## Supported Build Packs
 
  * https://github.com/heroku/heroku-buildpack-ruby
