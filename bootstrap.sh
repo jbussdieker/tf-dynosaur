@@ -3,6 +3,7 @@
 # Install dynosaur
 apt-get -y update
 apt-get -y install git ruby build-essential libpq-dev
+apt-get -y install libxml2-dev libxslt-dev
 gem install bundler --no-ri --no-rdoc
 gem install foreman --no-ri --no-rdoc --version 0.74.0
 git clone https://github.com/jbussdieker/dynosaur.git /tmp/dynosaur
